@@ -1,0 +1,21 @@
+type: personal
+
+structure:
+    archive:
+        - 
+    media:
+        - films
+        - games
+        - music
+        - photos
+        - tv
+        - videos
+    personal:
+        - finance
+    projects:
+        - 
+    resources:
+        - books
+        - software
+    sync:
+        - google-drive
