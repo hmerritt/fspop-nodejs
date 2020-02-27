@@ -1,2 +1,2 @@
 # File Structure
-A standardized file structure with usage rules baked in.
+A standardized file structure with naming and usage rules baked in.
