@@ -1,21 +1,19 @@
 type: personal
 
 structure:
-    archive:
-        - 
-    media:
+    - archive
+    - media:
         - films
         - games
         - music
         - photos
         - tv
         - videos
-    personal:
+    - personal:
         - finance
-    projects:
-        - 
-    resources:
+    - projects
+    - resources:
         - books
         - software
-    sync:
+    - sync:
         - google-drive
