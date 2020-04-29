@@ -1,0 +1,10 @@
+type: business
+
+structure:
+    - core:
+        - finance
+        - legal
+        - marketing
+        - brand
+        - sales
+    - docs
