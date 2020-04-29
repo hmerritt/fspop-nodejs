@@ -11,9 +11,13 @@ structure:
         - videos
     - personal:
         - finance
+        - health
+        - images
     - projects
     - resources:
         - books
+        - papers
         - software
+    - scripts
     - sync:
         - google-drive
