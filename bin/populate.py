@@ -71,7 +71,7 @@ def dir_bootstrap(structure, dir_root=data["type"]):
 
         # Check if dict
         elif type(value) is dict:
-            dir_bootstrap(value)
+            dir_bootstrap(value, dir_root)
 
 
 dir_bootstrap(data["structure"])
