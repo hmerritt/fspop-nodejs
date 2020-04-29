@@ -1,2 +1,9 @@
 
-target/*
+node_modules/
+target/
+.idea/
+
+*.log
+*.tar
+*.tar.gz
+yarn.lock
