@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 //  
-require("../lib/binaries/cli.js");
+require("../lib/binaries/CLI.js");
