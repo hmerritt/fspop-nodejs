@@ -12,11 +12,13 @@
     "start": "node index.js"
   },
   "bin": {
-    "fspop": "./bin/fspop.js"
+    "fspop": "./bin/fspop.js",
+    "file-structure": "./bin/fspop.js"
   },
   "dependencies": {
     "chalk": "^4.0.0",
-    "commander": "^5.1.0"
+    "commander": "^5.1.0",
+    "debug": "^4.1.1"
   },
   "keywords": [
     "cli",
