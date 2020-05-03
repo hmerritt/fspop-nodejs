@@ -41,5 +41,5 @@
     "type": "git",
     "url": "git+https://github.com/hmerritt/file-structure.git"
   },
-  "license": "APACHE"
+  "license": "Apache-2.0"
 }
