@@ -1,2 +1,12 @@
 
-target/*
+node_modules/
+target/
+.idea/
+tests/*.yml
+tests/*.yaml
+tests/*.json
+
+*.log
+*.tar
+*.tar.gz
+yarn.lock
