@@ -1,9 +1,25 @@
+const fs = require("fs");
 const FSPOP = require("../lib/API.js");
 const fspop = new FSPOP();
 
 const dir = {};
 dir.playground = "tests/playground/";
 dir.testYaml = dir.playground + "test.yml";
+dir.testDir = dir.playground + "test_mkdir";
+
+test("Creates individual directory correctly", () => {
+    // Create directory
+    const error = fspop.mkdir(dir.testDir, {}, (error) => {
+        if (error) return true;
+        return false;
+    });
+
+    // Test
+    expect(error).toEqual(false);
+
+    // Double check folder exists
+    expect(fs.existsSync(dir.testDir)).toEqual(true);
+});
 
 test("Parses yaml file correctly", () => {
     // Expected object
