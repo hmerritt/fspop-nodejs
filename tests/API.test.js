@@ -30,6 +30,9 @@ test("Skips creating an existing directory", () => {
 
     // Test
     expect(error).toEqual(false);
+
+    // Delete directory
+    fs.rmdirSync(dir.testDir);
 });
 
 test("Parses yaml file", () => {
@@ -62,9 +65,75 @@ test("Parses yaml file", () => {
         ],
     };
 
-    // Parse test file
+    // Parse test config
     const parsed = fspop.parse(dir.testYaml);
 
     // Test
     expect(parsed).toEqual(expected);
+});
+
+test("Crawl through a structure", () => {
+    // Expected array
+    const expectedStructureValues = [
+        {
+            value: "test-1--level-1--1",
+            path: "test",
+        },
+        {
+            value: "test-1--level-2--1",
+            path: "test/test-1--level-1--1",
+        },
+        {
+            value: "test-1--level-2--2",
+            path: "test/test-1--level-1--1",
+        },
+        {
+            value: "test-2--level-1--2",
+            path: "test",
+        },
+        {
+            value: "test-2--level-2--1",
+            path: "test/test-2--level-1--2",
+        },
+        {
+            value: "test-2--level-2--2",
+            path: "test/test-2--level-1--2",
+        },
+        {
+            value: "test-2--level-3--1",
+            path: "test/test-2--level-1--2/test-2--level-2--2",
+        },
+        {
+            value: "test-2--level-4--1",
+            path:
+                "test/test-2--level-1--2/test-2--level-2--2/test-2--level-3--1",
+        },
+        {
+            value: "test-2--level-4--2",
+            path:
+                "test/test-2--level-1--2/test-2--level-2--2/test-2--level-3--1",
+        },
+        {
+            value: "test-3--level-1--3",
+            path: "test",
+        },
+    ];
+
+    // Parse test config
+    const config = fspop.parse(dir.testYaml);
+
+    // Store values crawled from structure
+    const structureValues = [];
+
+    // Crawl though structure
+    fspop.structure_crawl(config.structure, config.name, (value, path) => {
+        // Add each value and its path into the array
+        structureValues.push({
+            value: value,
+            path: path,
+        });
+    });
+
+    // Test
+    expect(structureValues).toEqual(expectedStructureValues);
 });
