@@ -1,0 +1,13 @@
+name: test
+
+structure:
+    - test-1--level-1--1:
+        - test-1--level-2--1
+        - test-1--level-2--2
+    - test-2--level-1--2:
+        - test-2--level-2--1
+        - test-2--level-2--2:
+            - test-2--level-3--1:
+                - test-2--level-4--1
+                - test-2--level-4--2
+    - test-3--level-1--3
