@@ -7,7 +7,7 @@ dir.playground = "tests/playground/";
 dir.testYaml = dir.playground + "test.yml";
 dir.testDir = dir.playground + "test_mkdir";
 
-test("Creates individual directory correctly", () => {
+test("Creates individual directory", () => {
     // Create directory
     const error = fspop.mkdir(dir.testDir, {}, (error) => {
         if (error) return true;
@@ -21,7 +21,18 @@ test("Creates individual directory correctly", () => {
     expect(fs.existsSync(dir.testDir)).toEqual(true);
 });
 
-test("Parses yaml file correctly", () => {
+test("Skips creating an existing directory", () => {
+    // Create an existing directory
+    const error = fspop.mkdir(dir.testDir, {}, (error) => {
+        if (error) return true;
+        return false;
+    });
+
+    // Test
+    expect(error).toEqual(false);
+});
+
+test("Parses yaml file", () => {
     // Expected object
     const expected = {
         name: "test",
