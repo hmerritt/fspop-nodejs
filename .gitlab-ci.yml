@@ -1,0 +1,11 @@
+image: node:latest
+
+test:
+    before_script:
+        - unset CI
+        - npm install
+
+    script:
+        - npm run coverage
+
+    coverage: /All\sfiles.*?\s+(\d+.\d+)/
