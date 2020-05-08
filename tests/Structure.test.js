@@ -1,8 +1,8 @@
 const fs = require("fs");
-const FSPOP = require("../lib/API.js");
+const Parse = require("../lib/Parse");
 const Structure = require("../lib/Structure");
 
-const fspop = new FSPOP();
+const parse = new Parse();
 const structure = new Structure();
 
 const dir = {};
@@ -58,7 +58,7 @@ test("Crawls through a structure", () => {
     ];
 
     // Parse test config
-    const config = fspop.parse(dir.testYaml);
+    const config = parse.yaml(dir.testYaml);
 
     // Store values crawled from structure
     const structureValues = [];
