@@ -1,39 +1,11 @@
 const fs = require("fs");
-const FSPOP = require("../lib/API.js");
-const fspop = new FSPOP();
+const Parse = require("../lib/Parse");
+const parse = new Parse();
 
 const dir = {};
 dir.playground = "tests/playground/";
 dir.testYaml = dir.playground + "test.yml";
 dir.testDir = dir.playground + "test_mkdir";
-
-test("Creates individual directory", () => {
-    // Create directory
-    const error = fspop.mkdir(dir.testDir, {}, (error) => {
-        if (error) return true;
-        return false;
-    });
-
-    // Test
-    expect(error).toEqual(false);
-
-    // Double check folder exists
-    expect(fs.existsSync(dir.testDir)).toEqual(true);
-});
-
-test("Skips creating an existing directory", () => {
-    // Create an existing directory
-    const error = fspop.mkdir(dir.testDir, {}, (error) => {
-        if (error) return true;
-        return false;
-    });
-
-    // Test
-    expect(error).toEqual(false);
-
-    // Delete directory
-    fs.rmdirSync(dir.testDir);
-});
 
 test("Parses yaml file", () => {
     // Expected object
@@ -66,7 +38,7 @@ test("Parses yaml file", () => {
     };
 
     // Parse test config
-    const parsed = fspop.parse(dir.testYaml);
+    const parsed = parse.yaml(dir.testYaml);
 
     // Test
     expect(parsed).toEqual(expected);
