@@ -3,9 +3,9 @@ const Parse = require("../lib/Parse");
 const parse = new Parse();
 
 const dir = {};
-dir.playground = "tests/playground/";
-dir.testYaml = dir.playground + "test.yml";
-dir.testDir = dir.playground + "test_mkdir";
+dir.testground = "tests/testground/";
+dir.testYaml = dir.testground + "test.yml";
+dir.testDir = dir.testground + "test_mkdir";
 
 test("Parses yaml file", () => {
     // Expected object

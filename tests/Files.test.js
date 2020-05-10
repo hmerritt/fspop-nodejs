@@ -3,9 +3,9 @@ const Files = require("../lib/Files");
 const files = new Files();
 
 const dir = {};
-dir.playground = "tests/playground/";
-dir.testYaml = dir.playground + "test.yml";
-dir.testDir = dir.playground + "test_mkdir";
+dir.testground = "tests/testground/";
+dir.testYaml = dir.testground + "test.yml";
+dir.testDir = dir.testground + "test_mkdir";
 
 test("Creates individual directory", () => {
     // Create directory
