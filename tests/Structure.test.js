@@ -75,3 +75,17 @@ test("Crawls through a structure", () => {
     // Test
     expect(structureValues).toEqual(expectedStructureValues);
 });
+
+test("Counts all nodes in a structure", () => {
+    // Expected count number
+    const expectedCount = 10;
+
+    // Parse test config
+    const config = parse.yaml(dir.testYaml);
+
+    // Crawl though structure
+    const count = structure.count(config.structure);
+
+    // Test
+    expect(count).toEqual(expectedCount);
+});
