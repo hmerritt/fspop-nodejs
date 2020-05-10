@@ -1,6 +1,5 @@
 const fs = require("fs");
-const Parse = require("../lib/Parse");
-const parse = new Parse();
+const parse = require("../lib/Parse");
 
 const dir = {};
 dir.testground = "tests/testground/";

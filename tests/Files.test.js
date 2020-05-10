@@ -1,6 +1,5 @@
 const fs = require("fs");
-const Files = require("../lib/Files");
-const files = new Files();
+const files = require("../lib/Files");
 
 const dir = {};
 dir.testground = "tests/testground/";

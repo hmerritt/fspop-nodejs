@@ -1,9 +1,6 @@
 const fs = require("fs");
-const Parse = require("../lib/Parse");
-const Structure = require("../lib/Structure");
-
-const parse = new Parse();
-const structure = new Structure();
+const parse = require("../lib/Parse");
+const structure = require("../lib/Structure");
 
 const dir = {};
 dir.testground = "tests/testground/";
@@ -57,7 +54,7 @@ test("Crawls through a structure", () => {
         },
     ];
 
-    // Parse test config
+    // parse test config
     const config = parse.yaml(dir.testYaml);
 
     // Store values crawled from structure
@@ -80,7 +77,7 @@ test("Counts all nodes in a structure", () => {
     // Expected count number
     const expectedCount = 10;
 
-    // Parse test config
+    // parse test config
     const config = parse.yaml(dir.testYaml);
 
     // Crawl though structure
