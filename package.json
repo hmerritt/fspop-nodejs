@@ -1,6 +1,6 @@
 {
     "name": "fspop",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "main": "index.js",
     "homepage": "https://github.com/hmerritt/fspop/",
     "description": "Automate the creation of file structures using custom templates",
@@ -22,7 +22,8 @@
         "commander": "^5.1.0",
         "debug": "^4.1.1",
         "js-yaml": "^3.13.1",
-        "lodash": "^4.17.15"
+        "lodash": "^4.17.15",
+        "progress": "^2.0.3"
     },
     "devDependencies": {
         "coveralls": "^3.1.0",
