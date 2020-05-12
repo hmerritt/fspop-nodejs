@@ -6,30 +6,32 @@ dir.testground = "tests/testground/";
 dir.testYaml = dir.testground + "test.yml";
 dir.testDir = dir.testground + "test_mkdir";
 
-test("Creates individual directory", () => {
-    // Create directory
-    const error = files.mkdir(dir.testDir, (path, error) => {
-        if (error) return true;
-        return false;
+describe("mkdir", () => {
+    it("creates individual directory", () => {
+        // Create directory
+        const error = files.mkdir(dir.testDir, (error) => {
+            if (error) return true;
+            return false;
+        });
+
+        // Test
+        expect(error).toEqual(false);
+
+        // Double check folder exists
+        expect(fs.existsSync(dir.testDir)).toEqual(true);
     });
 
-    // Test
-    expect(error).toEqual(false);
+    it("skips creating an existing directory", () => {
+        // Create an existing directory
+        const error = files.mkdir(dir.testDir, (error) => {
+            if (error) return true;
+            return false;
+        });
 
-    // Double check folder exists
-    expect(fs.existsSync(dir.testDir)).toEqual(true);
-});
+        // Test
+        expect(error).toEqual(false);
 
-test("Skips creating an existing directory", () => {
-    // Create an existing directory
-    const error = files.mkdir(dir.testDir, (path, error) => {
-        if (error) return true;
-        return false;
+        // Delete directory
+        fs.rmdirSync(dir.testDir);
     });
-
-    // Test
-    expect(error).toEqual(false);
-
-    // Delete directory
-    fs.rmdirSync(dir.testDir);
 });
