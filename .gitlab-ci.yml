@@ -6,6 +6,6 @@ test:
         - npm install
 
     script:
-        - npm run coverage
+        - npm run test:coverage
 
     coverage: /All\sfiles.*?\s+(\d+.\d+)/

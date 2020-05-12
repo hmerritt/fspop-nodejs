@@ -11,8 +11,9 @@
     "scripts": {
         "start": "node index.js",
         "test": "jest",
-        "coverage": "jest --coverage",
-        "coveralls": "jest --coverage && cat tests/coverage/lcov.info | coveralls"
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "test:coveralls": "jest --coverage && cat tests/coverage/lcov.info | coveralls"
     },
     "bin": {
         "fspop": "./bin/fspop.js"
