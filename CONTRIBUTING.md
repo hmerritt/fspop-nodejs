@@ -1,10 +1,10 @@
 # Contributing
 
 
-## Cloning PM2 development
+## Cloning fspop for development
 
 ```bash
-$ git clone https://github.com/file-structure/fspop.git
+$ git clone https://github.com/hmerritt/fspop.git
 $ cd fspop
 $ git checkout development
 $ npm install
