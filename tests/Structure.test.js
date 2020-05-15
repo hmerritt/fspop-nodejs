@@ -87,4 +87,24 @@ describe("structure", () => {
         // Test
         expect(count).toEqual(expectedCount);
     });
+
+    it("verifies structure config integrity", () => {
+        const configValid = {
+            "name": "validName",
+            "structure": []
+        }
+
+        const configInvalidOne = {
+            "name_not": "validName",
+            "structure": []
+        }
+        const configInvalidTwo = {
+            "name": "validName",
+            "structure_not": []
+        }
+
+        expect(structure.isValid(configValid)).toEqual(true);
+        expect(structure.isValid(configInvalidOne)).toEqual(false);
+        expect(structure.isValid(configInvalidTwo)).toEqual(false);
+    });
 });
