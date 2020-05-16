@@ -5,7 +5,7 @@ Automate the creation of file structures using custom templates
 
 [![NPM](https://nodei.co/npm/fspop.png)](https://nodei.co/npm/fspop/)
 
-fspop => __f__<small>ile</small> __s__<small>tructure</small> __pop__<small>ulate</small>
+fspop => __f__(ile) __s__(tructure) __pop__(ulate)
 
 
 
@@ -25,7 +25,7 @@ $ npm install fspop -g
 The fastest way to create a new structure is to use the `init` command.
 
 ```bash
-$ fspop init YOUR_NEW_STRUCTURE
+$ fspop init STRUCTURE_NAME
 ```
 
 
@@ -33,5 +33,5 @@ $ fspop init YOUR_NEW_STRUCTURE
 Deploying a structure is as simple as calling `deploy` and giving the file name of the structure
 
 ```bash
-$ fspop deploy YOUR_NEW_STRUCTURE
+$ fspop deploy STRUCTURE_NAME
 ```
