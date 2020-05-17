@@ -4,11 +4,13 @@ const files = require("../lib/Files");
 const dir = {};
 dir.testground = "tests/testground/";
 dir.testYaml = dir.testground + "test.yml";
+dir.testYamlAlt = dir.testground + "altTest.yaml";
 dir.testDir = dir.testground + "test_mkdir";
 
 // Clean-up testground
 afterAll(() => {
     fs.rmdirSync(dir.testDir);
+    fs.unlinkSync(dir.testYamlAlt);
 });
 
 describe("mkdir", () => {
@@ -73,6 +75,12 @@ describe("elastic extension", () => {
     it("adds .yml file extension", () => {
         const path = files.elasticExtention(`${dir.testground}test`);
         expect(path).toEqual(dir.testYaml);
+    });
+
+    it("adds .yaml file extension", () => {
+        fs.createReadStream(dir.testYaml).pipe(fs.createWriteStream(dir.testYamlAlt));
+        const path = files.elasticExtention(`${dir.testground}altTest`);
+        expect(path).toEqual(dir.testYamlAlt);
     });
 
     it("returns empty string if nothing found", () => {
