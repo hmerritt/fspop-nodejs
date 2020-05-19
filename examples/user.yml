@@ -1,0 +1,15 @@
+name: user
+
+note: deploy using $ fspop up user
+
+structure:
+    - archive
+    - media:
+        - games
+        - music
+        - photos:
+            - family
+            - friends
+            - personal
+        - videos
+    - projects
