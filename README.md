@@ -19,6 +19,36 @@ $ npm install fspop -g
 
 
 
+## Defining a Structure File
+Structure files are written in `.yaml` and require two things. (Use `fspop init` to create one for you)
+1. name
+2. structure
+
+`fspop` will run though the entire structure and create a directory for each item
+
+```yaml
+name: media
+
+structure:
+    - games
+    - music
+    - photos:
+        - personal
+        - family
+```
+
+
+
+
+## Commands
+| Command  	| Description                             	|
+|----------	|-----------------------------------------	|
+| `deploy` 	| Creates file structure from config file 	|
+| `init`   	| Creates a new structure config file     	|
+
+
+
+
 ## Usage
 
 ### Create a new structure file
