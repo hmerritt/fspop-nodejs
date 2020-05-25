@@ -65,3 +65,13 @@ Deploying a structure is as simple as calling `deploy` and giving the file name 
 ```bash
 $ fspop deploy STRUCTURE_NAME
 ```
+
+
+
+
+<br>
+
+## License
+[Apache-2.0 License](LICENSE)
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B17979%2Fgithub.com%2Fhmerritt%2Ffspop.svg?type=large)](https://app.fossa.com/projects/custom%2B17979%2Fgithub.com%2Fhmerritt%2Ffspop?ref=badge_large)
